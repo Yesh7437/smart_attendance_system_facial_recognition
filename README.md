@@ -1,4 +1,8 @@
 # face-recognition-based-attendance-system  
+This is a Python code that uses computer vision and machine learning techniques to recognize and track faces in real-time video. The code utilizes a Flask web application framework to serve as the user interface.
+The code first initializes a VideoCapture object to access the webcam and uses a pre-trained Haar Cascade classifier to detect faces in the video stream. It then extracts faces from the detected regions and uses a machine learning model to identify the recognized faces.
+The machine learning model is trained using a set of labeled face images stored in the "static/faces" directory. It uses a Random Forest Classifier and GridSearchCV to select the best hyperparameters for the model. The model is then used to recognize the faces in the video stream and associate them with a unique identifier.
+The code also tracks the attendance of recognized individuals by storing the date, time, name, and roll number in a CSV file in the "Attendance" directory. The attendance file is updated every time a recognized face is detected and identified.
+The code includes several routing functions defined using Flask that serve as the different pages of the web application. The main page displays the attendance information and total registered users. If a recognized face is not found in the dataset, the user is redirected to the "Usernotfound“ html page and shows the message “Please register and then take attendance” and then they it displays the home page after refreshing, where they can register their face by providing their name and roll number. The registration data is then stored in the "static/faces" directory and used to train the machine learning model.
 
 
-![alt text](ss.png)
